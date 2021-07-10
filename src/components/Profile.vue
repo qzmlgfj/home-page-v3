@@ -66,6 +66,6 @@ export default {
 
 <style scoped>
 .column{
-  font-family: v-mono;
+  font-family: Fira Code;
 }
 </style>

@@ -144,6 +144,6 @@ export default {
 
 <style scoped>
 .column span{
-  font-family: v-mono;
+  font-family: Fira Code;
 }
 </style>
