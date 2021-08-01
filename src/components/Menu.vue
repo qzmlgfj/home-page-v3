@@ -146,4 +146,39 @@ export default {
 .column span{
   font-family: Fira Code;
 }
+
+button {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 75px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-bottom: 5%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+#mail {
+    font-size: 250%;
+    margin-left: 30%;
+    visibility: hidden;
+}
+
+#blog {
+    font-size: 250%;
+    margin-left: 33%;
+    visibility: hidden;
+}
+
+#github {
+    font-size: 250%;
+    margin-left: 28%;
+    visibility: hidden;
+}
 </style>

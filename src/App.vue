@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="container">
         <Profile />
         <Menu />
     </div>
@@ -14,7 +14,7 @@ export default {
     components: {
         Profile,
         Menu,
-    },
+    }
 };
 </script>
 
@@ -31,84 +31,50 @@ export default {
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-    width: 100%;
-}
-
 body {
     margin: 0;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
 #app {
-    min-width: 90%;
+    width: 100vw;
+    max-height: 100vh;
+}
+
+#container {
+    height: 100vh;
+    width: 75%;
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-left: 8%;
+    margin-left: 19%;
 }
 
 .column {
     float: left;
-    width: 50%;
-    margin: 2.5%;
-}
-
-button {
-    border: none;
-    outline: none;
-    width: 70%;
-    height: 75px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-bottom: 5%;
-    background-color: white;
-    align-items: center;
-    display: flex;
-}
-
-a {
-    text-decoration: none;
-}
-
-#mail {
-    font-size: 250%;
-    margin-left: 24%;
-    visibility: hidden;
-}
-
-#blog {
-    font-size: 250%;
-    margin-left: 27%;
-    visibility: hidden;
-}
-
-#github {
-    font-size: 250%;
-    margin-left: 22%;
-    visibility: hidden;
+    width: 45%;
+    margin: 3%;
 }
 
 @media screen and (max-width: 768px) {
     body {
         margin: 0;
-        min-width: 120%;
         display: inline;
     }
-    #app {
+
+    #container {
         margin: 0;
-        min-width: 110%;
         display: inline;
     }
+
     .column {
         margin-left: 5%;
-        margin-right: 5%;
-        min-width: 90%;
+        max-width: 85%;
+        width: 85%;
     }
     img {
         margin-left: 5%;
