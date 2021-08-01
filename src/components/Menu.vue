@@ -150,7 +150,7 @@ export default {
 button {
     border: none;
     outline: none;
-    width: 100%;
+    width: 90%;
     height: 75px;
     transition: all 0.5s;
     cursor: pointer;

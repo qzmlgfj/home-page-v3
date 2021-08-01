@@ -14,7 +14,7 @@ export default {
     components: {
         Profile,
         Menu,
-    }
+    },
 };
 </script>
 
@@ -25,6 +25,10 @@ export default {
     font-family: "Fira Code";
     src: url("https://qzmlgfj.ml/Fonts/FiraCode-Regular.woff") format("woff"),
         url("https://qzmlgfj.ml/Fonts/FiraCode-Regular.ttf") format("ttf");
+}
+
+html {
+    max-width: 100%;
 }
 
 * {
@@ -64,6 +68,11 @@ body {
     body {
         margin: 0;
         display: inline;
+        max-width: 100%;
+    }
+
+    html{
+        overflow-y: hidden;
     }
 
     #container {
@@ -72,9 +81,9 @@ body {
     }
 
     .column {
-        margin-left: 5%;
-        max-width: 85%;
-        width: 85%;
+        margin: 2.5%;
+        min-width: 90%;
+        width: 90%;
     }
     img {
         margin-left: 5%;
