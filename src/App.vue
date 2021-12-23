@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 @font-face {
     font-family: "Fira Code";
@@ -29,6 +29,7 @@ export default {
 
 html {
     max-width: 100%;
+    font-family: 'Fira Code', monospace;
 }
 
 * {
@@ -42,6 +43,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
+    font-family: 'Fira Code', monospace;
 }
 
 #app {

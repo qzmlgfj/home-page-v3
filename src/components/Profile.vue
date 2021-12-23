@@ -65,7 +65,9 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .column{
-  font-family: Fira Code;
+  font-family: 'Fira Code', monospace;
 }
 </style>

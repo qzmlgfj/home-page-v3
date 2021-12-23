@@ -14,7 +14,7 @@
                 >
             </button>
         </a>
-        <a href="https://qzmlgfj.ml/blog/">
+        <a href="https://blog.qzmlgfj.ml/">
             <button @mouseover="blogMouseOver" @mouseleave="blogMouseLeave">
                 <svg
                     width="64px"
@@ -143,8 +143,10 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .column span{
-  font-family: Fira Code;
+  font-family: 'Fira Code', monospace;
 }
 
 button {
