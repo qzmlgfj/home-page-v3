@@ -1,73 +1,54 @@
 <template>
-  <div class="column">
-    <n-h1
-      class="animate__animated"
-      :class="{ animate__rubberBand: IDIsShaking }"
-      @click="IDShaking"
-      @animationend="IDRecover"
-    >
-      Qzmlgfj
-    </n-h1>
+    <div class="column">
+        <n-h1 @click="changeTheme">
+            Qzmlgfj
+        </n-h1>
 
-    <n-h2>Who's this guy</n-h2>
-    A lazy dog from a second-rate university, an undergraduate student.
+        <n-h2>Who's this guy</n-h2>
+        A lazy dog from a second-rate university, an undergraduate student.
 
-    <n-h2>Interests</n-h2>
-    <n-ul>
-      <n-li>
-        Enjoy creating new projects and repositories, but never finish them.
-      </n-li>
-      <n-li>Front-end development, just a beginner.</n-li>
-      <n-li>Making gadgets.</n-li>
-    </n-ul>
+        <n-h2>Interests</n-h2>
+        <n-ul>
+            <n-li>
+                Enjoy creating new projects and repositories, but never finish
+                them.
+            </n-li>
+            <n-li>Front-end development, just a beginner.</n-li>
+            <n-li>Making gadgets.</n-li>
+        </n-ul>
 
-    <n-h2>Recent plans</n-h2>
-    <n-ul>
-      <n-li>Find something interests me.</n-li>
-      <n-li>Write some introductory articles about Computer Science.</n-li>
-    </n-ul>
-  </div>
+        <n-h2>Recent plans</n-h2>
+        <n-ul>
+            <n-li>Find something interests me.</n-li>
+            <n-li
+                >Write some introductory articles about Computer Science.</n-li
+            >
+        </n-ul>
+    </div>
 </template>
 
 <script>
-
-import {NH1, NH2, NUl, NLi} from "naive-ui"
+import {inject} from "vue";
+import { NH1, NH2, NUl, NLi } from "naive-ui";
 
 export default {
-  name: "Profile",
-  components :{
-    NH1,
-    NH2,
-    NUl,
-    NLi
-  },
-  data: function () {
-    return {
-      IDIsShaking: true,
-      shakingTimes: 0,
-    };
-  },
-  methods: {
-    IDShaking: function () {
-      if (this.shakingTimes >= 10) {
-        window.alert("I'm dizzy!!!");
-        this.shakingTimes = 0;
-      } else {
-        this.IDIsShaking = true;
-        this.shakingTimes = this.shakingTimes + 1;
-      }
+    name: "Profile",
+    components: {
+        NH1,
+        NH2,
+        NUl,
+        NLi,
     },
-    IDRecover: function () {
-      this.IDIsShaking = false;
+    data: function () {
+        return {
+            IDIsShaking: true,
+            shakingTimes: 0,
+        };
     },
-  },
+    setup() {
+        return {
+            changeTheme: inject("changeTheme"),
+        }
+    }
 };
 </script>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-.column{
-  font-family: 'Fira Code', monospace;
-}
-</style>
