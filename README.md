@@ -1,3 +1,3 @@
 # home-page-v3
 
-这是[Antrol](https://qzmlgfj.ml)的首页项目。
+这是[Antrol](https://antrol.xyz)的首页项目．
