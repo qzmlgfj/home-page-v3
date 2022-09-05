@@ -1,7 +1,7 @@
 <template>
-    <div class="column">
+    <div class="column profile">
         <n-h1 @click="changeTheme">
-            Qzmlgfj
+            Antrol
         </n-h1>
 
         <n-h2>Who's this guy</n-h2>
