@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { ref, provide } from "vue";
 import Profile from "./components/Profile.vue";
 import Menu from "./components/Menu.vue";
 import {
@@ -18,6 +17,8 @@ import {
     NLayout,
     darkTheme,
 } from "naive-ui";
+
+var SunCalc = require('suncalc');
 
 export default {
     name: "App",
@@ -27,26 +28,31 @@ export default {
         NConfigProvider,
         NLayout,
     },
-    setup() {
-        // Check current time is in the range of the dark theme.
-        let darkThemeFlag =
-            new Date().getHours() >= 19 || new Date().getHours() <= 7;
-        const theme = ref(darkThemeFlag ? darkTheme : {});
-
-        const changeTheme = () => {
-            if (darkThemeFlag) {
-                theme.value = {};
-            } else {
-                theme.value = darkTheme;
-            }
-            darkThemeFlag = !darkThemeFlag;
-        }
-        provide("changeTheme", changeTheme);
-
+    data() {
         return {
-            theme,
-        };
+            isDarktheme: true,
+        }
     },
+    computed: {
+        theme() {
+            return this.isDarktheme ? darkTheme : {};
+        },
+    },
+    provide() {
+        return {
+            changeTheme: () => {
+                console.log("changeTheme");
+                this.isDarktheme = !this.isDarktheme;
+            }
+        }
+    },
+    mounted() {
+        navigator.geolocation.getCurrentPosition((position => {
+            let times = SunCalc.getTimes(new Date(), position.coords.latitude, position.coords.longitude);
+            //return whether the current time is daytime
+            this.isDarktheme = !(new Date() > times.sunrise && new Date() < times.sunset);
+        }))
+    }
 };
 </script>
 
