@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { ref, provide, computed } from "vue";
 import Profile from "./components/Profile.vue";
 import Menu from "./components/Menu.vue";
 import {
@@ -28,29 +29,28 @@ export default {
         NConfigProvider,
         NLayout,
     },
-    data() {
-        return {
-            isDarktheme: true,
+    setup() {
+        const isDarktheme = ref(false);
+        const theme = computed(() => isDarktheme.value ? darkTheme : {});
+
+        const changeTheme = () => {
+            isDarktheme.value = !isDarktheme.value;
         }
-    },
-    computed: {
-        theme() {
-            return this.isDarktheme ? darkTheme : {};
-        },
-    },
-    provide() {
+
+        provide('changeTheme', changeTheme);
+
         return {
-            changeTheme: () => {
-                console.log("changeTheme");
-                this.isDarktheme = !this.isDarktheme;
-            }
+            isDarktheme,
+            theme,
         }
     },
     mounted() {
         navigator.geolocation.getCurrentPosition((position => {
             let times = SunCalc.getTimes(new Date(), position.coords.latitude, position.coords.longitude);
-            //return whether the current time is daytime
             this.isDarktheme = !(new Date() > times.sunrise && new Date() < times.sunset);
+
+            console.log("latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude);
+            console.log(times.sunrise, times.sunset);
         }))
     }
 };
@@ -121,36 +121,4 @@ body {
         margin-bottom: 0;
     }
 }
-
-/* @media screen and (max-width: 768px) {
-    body {
-        margin: 0;
-        display: inline;
-        max-width: 100%;
-    }
-
-    html {
-        overflow-y: hidden;
-    }
-
-    #container {
-        margin: 0;
-        display: inline;
-    }
-
-    .column {
-        margin: 2.5%;
-        min-width: 90%;
-        width: 90%;
-    }
-
-    img {
-        margin-left: 5%;
-    }
-
-    button {
-        min-width: 90%;
-        margin-left: 10%;
-    }
-} */
 </style>
