@@ -117,7 +117,7 @@ body {
         font-size: 30px;
     }
 
-    .btn:nth-child(3) {
+    .btn:nth-child(4) {
         margin-bottom: 0;
     }
 }

@@ -16,6 +16,14 @@
                 <span class="title">Blog</span>
             </div>
         </n-button>
+        <n-button class="btn" text tag="a" href="https://askme.antrol.xyz/">
+            <div class="btn-content">
+                <n-icon size="30px">
+                    <message-queue />
+                </n-icon>
+                <span class="title">AskMe</span>
+            </div>
+        </n-button>
         <n-button class="btn" text tag="a" href="mailto:qzmlgfj@gmail.com">
             <div class="btn-content">
                 <n-icon size="30px">
@@ -30,7 +38,7 @@
 <script>
 import { NButton, NIcon } from "naive-ui";
 import { Github } from "@vicons/fa";
-import { Home,Email } from "@vicons/carbon";
+import { Home, Email, MessageQueue } from "@vicons/carbon";
 
 export default {
     name: "Menu",
@@ -40,6 +48,7 @@ export default {
         Github,
         Home,
         Email,
+        MessageQueue,
     },
 };
 </script>
