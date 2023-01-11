@@ -18,8 +18,7 @@ import {
     NLayout,
     darkTheme,
 } from "naive-ui";
-
-var SunCalc = require('suncalc');
+import SunCalc from 'suncalc';
 
 export default {
     name: "App",
